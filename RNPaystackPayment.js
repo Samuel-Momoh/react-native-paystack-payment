@@ -46,7 +46,7 @@ const RNPaystackPayment = (props) => {
     onError("The require charge amount must be a number")
     return null
   }
-  if(typeof currency !== "string"){
+  if(currency !== null && typeof currency !== "string"){
     onError("The require curreny must be a string")
     return null
   }

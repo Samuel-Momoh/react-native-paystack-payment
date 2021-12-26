@@ -47,7 +47,19 @@ export function currencyFormatter(cur,amount){
       cur:"GHS",
       amount: parseInt(amount) * 100
     }
-  }else{
+  }else if(cur.toUpperCase() === "USD"){
+    return {
+      cur:"USD",
+      amount: parseInt(amount) * 100
+    }
+  }
+  else if(cur.toUpperCase() === "ZAR"){
+    return {
+      cur:"ZAR",
+      amount: parseInt(amount) * 100
+    }
+  }
+  else{
     return {
       cur:"NGN",
       amount: parseInt(amount) * 100
