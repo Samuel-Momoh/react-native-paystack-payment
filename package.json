@@ -1,0 +1,19 @@
+{
+  "name": "react-native-paystack-payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "card-validator": "^8.1.1",
+    "prop-types": "^15.7.2",
+    "react-native-flash-message": "^0.2.0"
+  }
+}

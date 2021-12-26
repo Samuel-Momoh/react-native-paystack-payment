@@ -1,0 +1,74 @@
+import groovy.json.JsonSlurper
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+// Create an easy to use function
+
+    //  Read and parse appe.json file from project root
+    def inputFile = new File("$rootDir/../app.json")
+    def appJson = new JsonSlurper().parseText(inputFile.text)
+
+    // Return the paystack confing file url
+    String servicesFiles =  appJson["paystackServices"]
+// check if file in paystack services is defined
+    if(!servicesFiles) throw new GradleException("Please provide your paystack config file and attach to the feild paystackServices in app.json")    
+    //  Read and parse paystack config file 
+    def servicesFile = new File("$rootDir/../"+servicesFiles)
+    if(!servicesFile)  throw new GradleException("Can not read path to your paystack Services file, try placing it in your app root folder")    
+    def servicesJson = new JsonSlurper().parseText(servicesFile.text)
+        // Return the the secret key and public key
+    String pub_key =  servicesJson["public_key"]
+      if(!pub_key)  throw new GradleException("Can not read public key in your paystack Services file")    
+    String secret_key =  servicesJson["secret_key"]
+      if(!secret_key)  throw new GradleException("Can not read secret key in your paystack Services file")    
+     
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes  {
+        release {
+           buildConfigField "String", "SECRET_KEY",  '"' + secret_key + '"' 
+            buildConfigField "String", "PUBLIC_KEY", '"' + pub_key + '"'
+        }
+        debug {
+             buildConfigField "String", "SECRET_KEY",  '"' + secret_key + '"' 
+            buildConfigField "String", "PUBLIC_KEY", '"' + pub_key + '"'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    mavenCentral()
+      mavenLocal()
+       google()
+        maven { url 'https://www.jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+  // Paystack plugin
+    implementation 'co.paystack.android:paystack:3.1.3'
+}
+  
