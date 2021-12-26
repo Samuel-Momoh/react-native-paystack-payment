@@ -15,7 +15,6 @@
 </div>
 
 ## Getting started
----
 
 `$ npm install react-native-paystack-payment --save`
 
