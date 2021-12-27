@@ -20,7 +20,8 @@
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-paystack-payment`
+
+Users on React Native 0.60+ automatically have access to "autolinking", requiring no further manual installation steps. To automatically link the package, rebuild your project
 
 
 ### Manual installation
@@ -41,7 +42,7 @@
   	```
 
 
-#### iOS ( IN VIEW )
+#### iOS ( EXPERIMENTAL )
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-paystack-payment` and add `RNPaystackPayment.xcodeproj`
@@ -57,7 +58,6 @@
 2. Open up your `MainPage.cs` app
   - Add `using Paystack.Payment.RNPaystackPayment;` to the usings at the top of the file
   - Add `new RNPaystackPaymentPackage()` to the `List<IReactPackage>` returned by the `Packages` method -->
-
 
 ## Usage
 ---
@@ -111,6 +111,22 @@ const App = () => {
 };
 ...
 ```
+## Expo
+Integration with Expo is possible in both bare workflow and [custom managed workflow](https://docs.expo.io/workflow/customizing/). React Native Paystack Payment cannot be used in the "Expo Go" app, because [ it requires custom native code](https://docs.expo.io/workflow/customizing/). However installation on expo is pretty much the same as on bare React Native app and it quite faster. I assume you already have a the `paystackServices.json` file ready if not check above to get it. we are still linking this file to `app.json`, Place the  paystack config path as bellow
+```javascript
+...
+   "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  },
+  "paystackServices": "paystackconfig.json"
+```
+Then rebuild your app using `expo run:android`. 
+
+Note: 
+1. During build this library will be installing the reuired dependency for this project ensure you have an internet connection
+2. Ensure the `app.json` file is close during build to avoid access error, as it will be required by the build script.
+
 Oh! wait is that it, yes oooo! :)
 ## Props
 
