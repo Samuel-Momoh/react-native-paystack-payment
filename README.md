@@ -7,11 +7,11 @@
 ## Demo
 
 <div style="display:flex;flex-direction: row; justify-contents: center ">
-<image src="./demo/Screenshot_20211224-150520.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
-<image src="./demo/Screenshot_20211224-144016.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
-<image src="./demo/Screenshot_20211224-150603.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
-<image src="./demo/Screenshot_20211224-150718.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
-<image src="./demo/Screenshot_20211224-150616.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
+<image src="demo/Screenshot_20211224-150520.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
+<image src="demo/Screenshot_20211224-144016.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
+<image src="demo/Screenshot_20211224-150603.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
+<image src="demo/Screenshot_20211224-150718.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
+<image src="demo/Screenshot_20211224-150616.png" style="width: 15%; height: 15%; margin-right:5px" alt="demo" />
 </div>
 
 ## Getting started

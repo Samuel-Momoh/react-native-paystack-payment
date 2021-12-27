@@ -1,14 +1,19 @@
 {
   "name": "react-native-paystack-payment",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "paystack",
+    "react-native-paystack",
+    "react-native-payment"
   ],
+  "homepage": "https://github.com/Samuel-Momoh/react-native-paystack-payment.git",
+  "github":"https://github.com/Samuel-Momoh/react-native-paystack-payment.git",
   "author": "Samuel Momoh",
   "license": "MIT",
   "dependencies": {
